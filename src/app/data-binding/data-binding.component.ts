@@ -6,10 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./data-binding.component.css']
 })
 export class DataBindingComponent {
+[x: string]: any;
 
   url: string = 'http://jbrunholi.training';
   cursoAngular: boolean = true;
   urlImagem = 'http://lorempixel.com.br/500/400/?1';
+
+  valorAtual: string = '';
+  valorSalvo = '';
+  isMouseOver: boolean = false;
 
   getValor() {
     return 1
@@ -18,7 +23,27 @@ export class DataBindingComponent {
   getCurtirCurso(){
     return true;
   }
-  constructor() { }
+
+  botaoClicado(){
+    alert('Botão clicado!');
+  }
+
+  onKeyUp(evento: KeyboardEvent){
+    console.log();
+    this.valorAtual = (<HTMLInputElement>evento.target).value;
+  }
+
+  salvarValor(valor: string){
+    this.valorSalvo = valor;
+  }
+
+  onMouseOverOut(){
+    this.isMouseOver = !this.isMouseOver;
+  }
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
