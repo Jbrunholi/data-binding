@@ -26,6 +26,8 @@ export class DataBindingComponent implements OnInit {
   isMouseOver: boolean = false;
 
   nomeDoCurso: string = 'Angular';
+
+
   nome: string = 'Angular';
   valorInicial = 15;
 
